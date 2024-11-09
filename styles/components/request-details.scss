@@ -1,0 +1,93 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-request-details{
+  width: 100rem;
+  padding: variables.$space-lg variables.$space-xl;
+  border: variables.$border-thin;
+  display: grid;
+  row-gap: variables.$space-lg;
+
+  &__header, &__footer, &__actions{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__actions{
+    padding-top: variables.$space-lg;
+    border-top: variables.$border-thin;
+  }
+
+  &__header{
+    padding-bottom: variables.$space-lg;
+    border-bottom: variables.$border-thin;
+
+    p{
+      span{
+        font-weight: bold;
+      }
+
+      &:nth-child(2){
+        span{
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  &__message{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: variables.$space-md;
+
+    p{
+      font-size: variables.$text--md
+    }
+  }
+
+  &__footer{
+    p{
+      &:nth-child(1){
+        a{
+          @extend %link-base;
+          @extend %link-text-hover;
+        }
+      }
+    }
+  }
+
+  &__action{
+    @extend %button-reset;
+    font-weight: variables.$text-weight--medium;
+    padding: variables.$padding-8x12;
+    transition: color variables.$a-time--short ease, background-color variables.$a-time--normal ease-in;
+
+    &_approve{
+      background-color: var(--color--main-base);
+      color: var(--color--text-white);
+
+      &:hover{
+        background-color: var(--color--main-dark--1);
+      }
+    }
+    
+    &_reject{
+      color: var(--color--error-base);
+
+      &:hover{
+        color: var(--color--error-dark);
+      }
+    }
+  }
+}
+
+.rejected{
+  color: var(--color--error-base);
+}
+.approved{
+  color: var(--color--success-base);
+}
+.pending{
+  color: var(--color--text-base);
+}

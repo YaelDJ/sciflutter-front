@@ -1,0 +1,15 @@
+@use '../abstract/variables';
+
+.l-article-resume{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  column-gap: variables.$space-2xl;
+
+  aside{
+    display: grid;
+    align-items: start;
+    row-gap: variables.$space-4xl;
+    justify-items: end;
+  }
+}

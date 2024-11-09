@@ -1,0 +1,30 @@
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$max-width-size: 120rem;
+
+.c-requested-window{
+  display: grid;
+  max-width: $max-width-size;
+  row-gap: variables.$space-2xl;
+
+  &__heading{
+    @include mixins.center-flex;
+    color: var(--color--main-base);
+    font-size: variables.$text--lg;
+  }
+
+  &__message{
+    width: 75%;
+    margin-inline: auto;
+    text-align: center;
+    display: grid;
+    row-gap: variables.$space-md;
+
+    font-size: variables.$text--md;
+
+    p{
+      text-wrap: pretty;
+    }
+  }
+}

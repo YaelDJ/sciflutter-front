@@ -1,0 +1,15 @@
+@use '../abstract/variables';
+
+.overlay{
+  display: none;
+  opacity: 0;
+  background-color: variables.$color--overlay;
+  inset: 0;
+
+  &--open{
+    display: block;  
+    opacity: 1;
+  }
+
+  position: fixed;
+}

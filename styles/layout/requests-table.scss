@@ -1,0 +1,62 @@
+@use '../abstract/variables';
+@use '../abstract/mixins';
+@use '../abstract/helpers';
+
+.l-requests-table{
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th,td{
+    padding: variables.$space-base variables.$space-lg;
+  }
+  
+  thead{
+    th{
+      background-color: variables.$color--text-base;
+      color: variables.$color--text-white;
+    }
+  }
+
+  tbody {
+    max-height: 50rem;
+    overflow-y: scroll;
+
+    th, td{
+      text-align: start;
+      border-bottom: variables.$border-thin;
+    }
+
+    th{
+      display: block;
+      display: flex;
+      align-items: center;
+      gap: variables.$space-base;
+    }
+
+    td:last-child{
+      text-align: center;
+    }
+
+    a{
+      @extend %link-base;
+      @extend %link-text-hover;
+    }
+  }
+}
+
+.approved{
+  th{
+    color: var(--color--success-base);
+  }
+}
+.pending{
+  th{
+    color: var(--color--text-base);
+  }
+}
+.rejected{
+  th{
+    color: var(--color--error-base);
+  }
+}

@@ -1,0 +1,25 @@
+@use '../abstract/animations';
+@use '../abstract/variables';
+@use '../components/navbar-menu.scss' as c-variables;
+
+.s-navbar-menu{
+  display: flex;
+  align-items: center;
+  gap: variables.$space-xl;
+
+  &__option, &__avatar{
+    @extend %a-skeleton;
+  }
+
+  &__option{
+    width: c-variables.$icon-size;
+    height: c-variables.$icon-size;
+    border-radius: 50%;
+  }
+
+  &__avatar{
+    width: c-variables.$avatar-size;
+    height: c-variables.$avatar-size;
+    border-radius: 50%;
+  }
+}

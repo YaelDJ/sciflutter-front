@@ -1,0 +1,16 @@
+@use '../abstract/variables';
+
+.c-search-resume{
+  width: 100%;
+  text-align: start;
+
+  &__search{
+    font-size: variables.$text--lg;
+    font-weight: variables.$text-weight--medium;
+  }
+
+  &__count{
+    font-size: variables.$text--md;
+    padding: 0 variables.$space-lg;
+  }
+}

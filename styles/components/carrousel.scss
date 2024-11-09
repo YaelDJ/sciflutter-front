@@ -1,0 +1,62 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$icon-size: 4rem;
+
+.c-carrousel{
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  column-gap: variables.$space-2xl;
+  margin-inline: auto;
+  width: 100%;
+
+  &, &__btn{
+    @include mixins.center-grid;
+  }
+
+  &__btn{
+    @extend %button-reset;
+    font-size: $icon-size;
+    color: var(--color--main-base);
+  }
+
+  &__list{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5.6rem;
+    scroll-behavior: smooth;
+    padding: variables.$space-xl 5.6rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    li{
+      user-select: none;
+    }
+  }
+}
+
+.dragging{
+  cursor: grab;
+
+  li{
+    pointer-events: none
+  }
+}
+
+.disable{
+  @extend %button-disable;
+  color: var(--color--text-base);
+}
+
+.has-no-btns{
+  grid-template-columns: 1fr;
+}
+
+.has-center-items{
+  justify-content: center;
+}

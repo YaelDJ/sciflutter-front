@@ -1,0 +1,23 @@
+@use '../abstract/variables';
+
+.c-message{
+  font-size: variables.$text--lg;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+
+  &_sub{
+    @extend .c-message;
+    font-size: variables.$text--md;
+    color: var(--color--text-base);
+    font-weight: variables.$text-weight--regular;
+  }
+}
+
+.default{
+  color: var(--color--main-base)
+}
+
+.error{
+  color: var(--color--error-base);
+}

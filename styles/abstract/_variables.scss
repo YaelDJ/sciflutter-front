@@ -1,0 +1,97 @@
+/* UI COLORS */
+
+$color--main-dark--2: #2e1800;
+$color--main-dark--1: #cf6b00;
+$color--main-base: #e67700;
+
+$color--background: #f5f5f5;
+
+$color--lines: #000814;
+
+$color--text-emphasys: #2e1800;
+$color--text-base: rgb(0, 8, 20);
+$color--text-light: #343a40;
+$color--text-white: #f5f5f5;
+
+$color--error-dark: #8d1d1d;
+$color--error-base: #b52626;
+
+$color--warn-dark: #c88d04;
+$color--warn-base: #fab005;
+
+$color--success-dark: #0e3c67;
+$color--success-base: #135089;
+
+$color--overlay: rgba($color--text-base, 0.3);
+
+$color--skeleton--dark: #f5f5f5;
+$color--skeleton--base: #ececec;
+
+/* UI COLORS DARKMODE */
+$dark-color--main-dark--1: #ba6a15;
+$dark-color--main-base: #e9851a;
+
+$dark-color--background: #1a1d20;
+
+$dark-color--text-base: #aeb0b3;
+$dark-color--text-white: #1a1d20;
+
+$dark-color--lines: #343a40;
+
+/* SKELETON */
+
+$_color--skeleton-background: #ececec;
+$_color--skeleton-animation: #f5f5f5;
+
+$animated-item-background: linear-gradient(110deg, $_color--skeleton-background 8%, $_color--skeleton-animation 18%, $_color--skeleton-background 33%);
+
+/* SHADOWS */
+$_color--shadow-dark: #000814;
+$_color--shadow-base: #343a40;
+$_color--shadow-light: #32325d;
+
+$shadow--big: rgba($_color--shadow-base, 0.1) 0px 1px 1px 0px inset, rgba($_color--shadow-light, 0.25) 0px 50px 100px -20px, rgba($_color--shadow-dark, 0.3) 0px 30px 60px -30px;
+$shadow--medium: rgba($_color--shadow-dark, 0.1) 0px 1px 0px, rgba($_color--shadow-dark, 0.1) 0px 8px 24px, rgba($_color--shadow-dark, 0.1) 0px 16px 48px;
+$shadow--small: rgba($_color--shadow-base, 0.2) 0px 2px 8px 0px;
+
+/* FONT SIZES */
+$text--3xl: 6.104rem;
+$text--2xl: 3.906rem;
+$text--xl: 3.125rem;
+$text--lg: 2.5rem;
+$text--md: 2rem;
+$text--base: 1.6rem;
+$text--sm: 1.28rem;
+
+/* SPACES */
+$space-6xl: 14.8rem;
+$space-5xl: 12.8rem;
+$space-4xl: 9.6rem;
+$space-3xl: 6.4rem;
+$space-2xl: 4.8rem;
+$space-xl: 3.2rem;
+$space-lg: 2.4rem;
+$space-md: 1.6rem;
+$space-base: 1.2rem;
+$space-sm: 0.8rem;
+$space-xsm: 0.4rem;
+
+/* WEIGHTS */
+$text-weight--bold: 600;
+$text-weight--medium: 500;
+$text-weight--regular: 400;
+$text-weight--light: 300;
+
+/* BORDERS */
+$_color-border: var(--color--lines);
+
+$border-thin: 1px solid $_color-border;
+$border-normal: 2px solid $_color-border;
+$border-bold: 3px solid $_color-border;
+
+$a-time--short: 0.2s;
+$a-time--normal: 0.3s;
+$a-time--long: 0.4s;
+
+$padding-8x12: $space-sm $space-base;
+

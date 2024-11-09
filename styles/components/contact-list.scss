@@ -1,0 +1,23 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-contact-list{
+  @include mixins.display-flex(row, 2.4rem, center, center);
+  list-style: none;
+
+  &__link{
+    @extend %link-base;
+    color: var(--color--main-base);
+    font-size: variables.$text--2xl;
+    transition: color variables.$a-time--short ease;
+
+    &:hover{
+      color: var(--color--main-dark--1);
+    }
+
+    &:active{
+      color: var(--color--main-base);
+    }
+  }
+}

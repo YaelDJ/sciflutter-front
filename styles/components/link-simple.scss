@@ -1,0 +1,19 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$icon-size: 2.4rem;
+
+.c-link-simple{
+  @extend %link-base;
+  @extend %link-text-hover;
+  @include mixins.center-flex;
+  gap: variables.$space-sm;
+  transition: color variables.$a-time--short ease;
+
+  &__icon{
+    width: $icon-size;
+    height: $icon-size;
+    color: inherit;
+  }
+}

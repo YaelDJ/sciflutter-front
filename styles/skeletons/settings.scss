@@ -1,0 +1,48 @@
+@use '../abstract/animations';
+@use '../components/settings-group.scss';
+@use '../layout/settings.scss';
+
+.s-settings{
+  width: 100%;
+
+  &__heading{
+    @extend .l-settings__heading;
+  }
+
+  &__content{
+    @extend .l-settings__content;
+  }
+
+  &__input{
+    @extend %a-skeleton;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    line-height: 1.6;
+    font-size: 1.8rem;
+    color: transparent;
+  }
+
+  &__container{
+    width: 100%;
+    display: grid;
+    row-gap: 2.4rem;
+    justify-items: start;
+    align-content: start;
+  }
+
+  &__group {
+    @extend .c-settings-group;
+  }
+
+  &__photos{
+    width: 100%;
+    display: grid;
+    row-gap: 2.4rem;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &__row{
+    @extend .l-settings__row;
+  }
+}

@@ -1,0 +1,28 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-article-index{
+  &, &__list{
+    display: grid;
+    justify-items: end;
+  }
+
+  row-gap: variables.$space-md;
+  padding: 0 variables.$space-lg;
+
+  &__header{
+    font-size: variables.$text--lg;
+    font-weight: variables.$text-weight--regular;
+    color: var(--color--main-base);
+  }
+
+  &__list{
+    list-style: none;
+    row-gap: variables.$space-md;
+
+    &-link{
+      @extend %link-base;
+      @extend %link-text-hover;
+    }
+  }
+}

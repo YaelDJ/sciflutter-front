@@ -1,0 +1,10 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.l-write{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  row-gap: variables.$space-3xl;
+}

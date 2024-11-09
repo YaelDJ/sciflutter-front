@@ -1,0 +1,79 @@
+@use '../abstract/mixins';
+
+.modal-cont-1{
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  display: none;
+  overflow-y: scroll;
+  overscroll-behavior: content;
+
+  &--open{
+    display: block;
+  }
+}
+
+.modal-cont-2{
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.modal-cont-3{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 100vh;
+}
+
+.modal-cont-4{
+  min-width: inherit;
+  position: relative;
+  display: inherit;
+  max-height: inherit;
+  height: inherit;
+  min-height: inherit;
+  width: inherit;
+  max-width: inherit;
+  justify-content: inherit;
+  flex-grow: inherit;
+  align-content: inherit;
+  align-items: inherit;
+  flex-direction: inherit;
+  flex-shrink: inherit;
+}
+
+.modal-cont-5{
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  box-sizing: border-box;
+  align-items: stretch;
+  min-height: 100vh;
+  flex-grow: 0;
+}
+
+.modal-container{
+  min-width: 0;
+  min-height: 0;
+  padding: 4.8rem 0.8rem;
+  pointer-events: none;
+  // @include mixinst.display(col, initial, flex-start, center);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal{
+  background-color: var(--color--background);
+  padding: 2.4rem 3.6rem;
+  width: fit-content;
+  overflow: hidden;
+}
+
+@media (max-width: 1400px){
+  .modal{
+    width: 90%;
+  }
+}

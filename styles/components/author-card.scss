@@ -1,0 +1,67 @@
+@use '../abstract/helpers';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+$max-width-card: 35rem;
+$author-img-size: 14rem;
+$icon-size: 2.4rem;
+
+.c-author-card{
+  max-width: $max-width-card;
+  padding: variables.$space-xl variables.$space-2xl;
+  box-shadow: variables.$shadow--small;
+  // border: 1px solid var(--color--text-base);
+  // border-style: ridge;
+  text-align: center;
+
+  &, &__stats, &__stat{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+  }
+
+  &, &__stats{
+    row-gap: variables.$space-md;
+  }
+
+  &__img{
+    width: $author-img-size;
+    height: $author-img-size;
+    border-radius: 50%;
+  }
+
+  &__heading{
+    width: 100%;
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--medium;
+    border-bottom: 1px solid var(--color--main-base);
+  }
+
+  &__discipline{
+    color: var(--color--main-base);
+    line-height: 0.3;
+    font-weight: variables.$text-weight--medium;
+  }
+
+  &__stats{
+    grid-template-columns: 100%;
+    padding: variables.$space-md 0;
+  }
+
+  &__stat{
+    grid-template-columns: 3rem 1fr 3rem;
+    align-items: center;
+    column-gap: variables.$space-md;
+    font-weight: variables.$text-weight--regular;
+    color: var(--color--main-base);
+
+    &-label{
+      color: var(--color--text-base);
+    }
+  }
+
+  &__icon{
+    width: $icon-size;
+    height: $icon-size;
+  }
+}

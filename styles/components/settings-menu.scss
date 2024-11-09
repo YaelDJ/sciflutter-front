@@ -1,0 +1,26 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-settings-menu{
+  padding: variables.$space-md variables.$space-lg;
+  list-style: none;
+  display: grid;
+  row-gap: variables.$space-md;
+  justify-content: start;
+  align-content: start;
+
+  li{
+    font-size: variables.$text--md
+  }
+
+  &__link{
+    @extend %link-base;
+    @extend %link-text-hover;
+
+    &_active{
+      @extend .c-settings-menu__link;
+      color: var(--color--main-base);
+      @extend %button-disable;
+    }
+  }
+}

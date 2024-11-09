@@ -1,0 +1,27 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-write-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  &__btn{
+    @extend %button-reset;
+    padding: variables.$space-base variables.$space-lg;
+    color: var(--color--text-white);
+    font-weight: variables.$text-weight--medium;
+    background-color: var(--color--main-base);
+    transition: background-color variables.$a-time--normal ease;
+
+    &:hover{
+      background-color: var(--color--main-dark--1);
+    }
+  }
+}
+
+.is-disable{
+  visibility: hidden;
+  pointer-events: none;
+  background-color: var(--color--text-light);
+}

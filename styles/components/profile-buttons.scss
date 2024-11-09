@@ -1,0 +1,38 @@
+@use '../abstract/helpers';
+@use '../abstract/animations';
+@use '../abstract/variables';
+
+.c-profile-buttons{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: variables.$text--md;
+
+  button{
+    @extend %button-reset;
+    @extend %a-btn_new-lines;
+    padding: 0;
+    transition: color variables.$a-time--short ease;
+
+    span{
+      padding: variables.$space-base variables.$space-lg;
+    }
+
+    &[data-style="secondary"]{
+      background-color: transparent;
+      color: var(--color--text-base);
+      outline: 2px solid var(--color--text-base);
+      outline-offset: -2px;
+    }
+
+    &[data-style="primary"]{
+      background-color: var(--color--text-base);
+      color: var(--color--text-white);
+    }
+
+    &:hover{
+      color: var(--color--main-base);
+    }
+  }
+}

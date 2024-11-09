@@ -1,0 +1,65 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.user-settings-photo{
+  @include mixins.display-flex(row, 1.6rem, center, center);
+
+  &__upload{
+    &-input{
+      height: 0.1px;
+      width: 0.1px;
+      position: absolute;
+      z-index: -2;
+      opacity: 0;
+    }
+
+    &-label{
+      display: block;
+      color: var(--color--main-base);
+      font-size: 1.8rem;
+      padding: variables.$padding-8x12;
+      border-bottom: 1px solid var(--color--main-base);
+      cursor: pointer;
+      transition: color variables.$a-time--short ease, border-bottom-color variables.$a-time--normal ease-in;
+
+      &:hover{
+        color: var(--color--main-dark--1);
+        border-bottom-color: var(--color--main-dark--1);
+      }
+    }
+  }
+
+  &__btn{
+    @extend %button-reset;
+    font-size: 1.8rem;
+    padding: variables.$padding-8x12;
+    color: var(--color--text-base);
+    border-bottom: 1px solid var(--color--text-base);
+    transition: color variables.$a-time--short ease, border-bottom-color variables.$a-time--normal ease-in;
+
+    &:hover{
+      color: var(--color--text-light);
+      border-bottom-color: var(--color--text-light);
+    }
+  }
+
+  &__btns{
+    display: grid;
+    row-gap: 1.2rem;
+  }
+
+  &__profile-img{
+    width: 12.6rem;
+    height: 12.6rem;
+    border-radius: 50%;
+    border: variables.$border-thin;
+  }
+
+  &__cover-img{
+    border: variables.$border-thin;
+    width: 25.2rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}

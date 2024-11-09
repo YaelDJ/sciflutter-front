@@ -1,0 +1,59 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+$img-size: 4.8rem;
+
+.c-article-header{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  row-gap: variables.$space-2xl;
+
+  &__details{
+    @include mixins.display-flex(row, initial, center, space-between);
+    width: 100%;
+    padding: variables.$space-md variables.$space-lg;
+    border-bottom: variables.$border-thin;
+  }
+
+  &__author{
+    display: flex;
+    gap: variables.$space-lg;
+    align-items: center;
+
+    img{
+      width: $img-size;
+      height: $img-size;
+      border-radius: 50%;
+    }
+
+    &-text{
+      display: grid;
+      row-gap: variables.$space-sm;
+      text-align: center;
+      
+      strong{
+        display: block;
+        font-size: variables.$text--md;
+        font-weight: variables.$text-weight--medium;
+        color: var(--color--text-base);
+      }
+
+      p{
+        color: var(--color--main-base);
+      }
+    }
+  }
+
+  &__date{
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--medium;
+  }
+
+  &__title{
+    font-size: variables.$text--xl;
+    max-width: 120rem;
+    font-weight: variables.$text-weight--medium;
+    color: var(--color--main-dark--2);
+  }
+}

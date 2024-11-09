@@ -1,0 +1,62 @@
+@use '../components/footer-list.scss';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$color--background-footer: variables.$dark-color--background;
+
+.l-footer{
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  border-top: variables.$border-thin;
+  
+  &__col:nth-child(1){
+    @include mixins.display-flex(column, 2.4rem, initial, flex-end);
+    padding: variables.$space-lg variables.$space-2xl;
+  }
+
+  &__col:nth-child(2){
+    background-color: $color--background-footer;
+    padding: 4.8rem 5.6rem;
+  }
+
+  &__description{
+    @include mixins.display-flex(column, 1.6rem, initial, center);
+    width: 90%;
+    padding: variables.$space-md 0;
+    border-bottom: variables.$border-thin;
+
+    &-logo{
+      height: 9.6rem;
+    }
+
+    &-text{
+      text-align: center;
+      line-height: 1.6;
+    }
+  }
+
+  &__contact{
+    width: 90%;
+    @include mixins.display-flex(column, 1.6rem, initial, center);
+
+    &-heading{
+      font-size: variables.$text--md;
+      color: var(--color--main-base);
+      font-weight: 500;
+    }
+  }
+
+  &__nav{
+    @include mixins.display-flex(row, 5.6rem, flex-start, center);
+
+    &-col{
+      @include mixins.display-flex(column, 2.4rem, initial, center);
+
+      &-title{
+        font-size: 2rem;
+        color: var(--color--main-base);
+        font-weight: 500;
+      }
+    }
+  }
+}

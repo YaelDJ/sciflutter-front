@@ -1,0 +1,21 @@
+@use '../abstract/variables';
+
+.c-details-box{
+  padding: variables.$space-lg variables.$space-2xl;
+  box-shadow: variables.$shadow--small;
+  width: 100%;
+  display: grid;
+  row-gap: variables.$space-lg;
+  justify-items: start;
+  
+  &__heading{
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--medium;
+    color: var(--color--text-base);
+  }
+
+  p{
+    line-height: 1.6;
+    padding: 0 variables.$space-base;
+  }
+}

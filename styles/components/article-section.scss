@@ -1,0 +1,29 @@
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+.article-section{
+  
+  div{
+    @include mixins.display-flex(column, variables.$space-md, initial, center);
+    text-align: start;
+    width: 100%;
+  }
+
+  h2{
+    font-size: variables.$text--lg;
+    font-weight: variables.$text-weight--bold;
+    color: var(--color--main-dark--2);
+    display: block;
+    margin-top: variables.$space-2xl;
+  }
+
+  p{
+    line-height: 1.8;
+    width: 100%;
+  }
+  
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}

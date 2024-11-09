@@ -1,0 +1,7 @@
+@use '../abstract/animations';
+
+.s-form{
+  @extend %a-skeleton;
+  width: 45%;
+  height: 40rem;
+}

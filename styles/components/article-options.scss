@@ -1,0 +1,61 @@
+@use '../abstract/helpers';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+$icon-size: 2.4rem;
+$author-img-size: 3.2rem;
+
+.c-article-options{
+  display: grid;
+  row-gap: variables.$space-lg;
+  justify-items: center;
+  padding: variables.$space-xl variables.$space-md;
+  box-shadow: variables.$shadow--small;
+  width: 75%;
+  font-size: variables.$text--md;
+
+  &__heading{
+    font-size: inherit;
+    font-weight: 500;
+    color: var(--color--main-base);
+  }
+
+  &__option, &__author{
+    @include mixins.center-flex;
+    transition: color variables.$a-time--short ease;
+    gap: 1.2rem;
+  }
+
+  &__option{
+    @extend %button-reset;
+    @extend %link-text-hover;
+
+    &__icon{
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+
+  &__author{
+    @extend %link-base;
+    @extend %link-text-hover;
+
+    img{
+      width: $author-img-size;
+      height: $author-img-size;
+      border-radius: 50%;
+    }
+
+    strong{
+      font-weight: inherit;
+    }
+  }
+}
+
+.is-fill{
+  color: var(--color--main-base);
+
+  &:hover{
+    color: var(--color--text-base);
+  }
+}

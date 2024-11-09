@@ -1,0 +1,19 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+$logo-size: 3.2rem;
+
+.l-header{
+  padding: 0 variables.$space-2xl;
+
+  &__navigation{
+    @include mixins.display-flex(row, initial, center, space-between);
+
+    padding: variables.$space-lg 0 variables.$space-md;
+    border-bottom: variables.$border-thin;
+  }
+
+  &__logo{
+    height: $logo-size;
+  }
+}

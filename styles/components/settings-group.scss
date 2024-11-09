@@ -1,0 +1,39 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-settings-group{
+  width: 100%;
+  display: grid;
+  row-gap: 1.2rem;
+  justify-content: start;
+  grid-template-columns: 1fr;
+
+  &_single{
+    width: 45%;
+  }
+
+  label, p{
+    font-weight: 500;
+  }
+
+  .photos{
+    width: 100%;
+    display: grid;
+    row-gap: 2.4rem;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .input{
+    @extend %button-reset;
+    border-bottom: variables.$border-normal;
+    padding: variables.$padding-8x12;
+    resize: none;
+    line-height: 1.6;
+    transition: border-bottom 0.3s ease-in;
+
+    &:focus{
+      border-bottom: solid 2px var(--color--main-base);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstract/helpers';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.c-return-buttons{
+  width: 100%;
+  padding: 2.4rem;
+  
+  font-size: variables.$text--md;
+
+  div{
+    &:not(:last-child){
+      margin-bottom: variables.$space-md;
+    }
+  }
+
+  button {
+    @extend %button-reset;
+  }
+
+  a{
+    @extend %link-base;
+  }
+
+  button, a{
+    @extend %link-text-hover;
+    @include mixins.center-flex;
+    margin-inline: auto;
+    gap: variables.$space-base;
+    transition: color variables.$a-time--short ease;
+  }
+}

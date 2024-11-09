@@ -1,0 +1,18 @@
+@use '../abstract/mixins';
+
+.b-prev-list{
+  &_articles{
+    @include mixins.display-flex(column, 5.2rem, center, center);
+    padding: 0 4.8rem;
+    // width: 80%;
+    width: 100%;
+  }
+
+  &_authors{
+    width: 100%;
+    max-width: 100%;
+    @include mixins.display-flex(row, 5.6rem, center, flex-start);
+    padding: 2.4rem 5.6rem;
+    overflow-x: hidden;
+  }
+}

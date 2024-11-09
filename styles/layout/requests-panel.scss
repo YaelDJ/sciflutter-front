@@ -1,0 +1,7 @@
+@use '../abstract/variables';
+
+.l-requests-panel{
+  display: grid;
+  row-gap: variables.$space-lg;
+  grid-template-columns: 1fr;
+}

@@ -1,0 +1,25 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.l-results{
+  width: 100%;
+  grid-template-columns: 100%;
+
+  &, &-articles{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    row-gap: variables.$space-2xl;
+  }
+
+  &-articles{
+    width: 80%;
+    grid-template-columns: 1fr;
+  }
+
+  &-authors{
+    width: 100%;
+    @include mixins.center-flex;
+    padding: variables.$space-2xl 0 variables.$space-4xl;
+  }
+}

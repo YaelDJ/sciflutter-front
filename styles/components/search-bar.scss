@@ -1,0 +1,77 @@
+@use '../abstract/mixins';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/animations';
+
+$icon-size: 2.4rem;
+
+.c-search-bar{
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: variables.$space-lg;
+  align-items: center;
+  margin-inline: auto;
+
+  &__input, &__btn{
+    @extend %button-reset;
+  }
+
+  &__bar{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: variables.$space-base;
+    border: variables.$border-normal;
+    padding: variables.$padding-8x12;
+    transition: border variables.$a-time--normal ease, box-shadow variables.$a-time--long ease;
+
+    &:focus-within{
+      border: variables.$border-normal;
+      box-shadow: variables.$shadow--small;
+      border-color: var(--color--main-base);
+
+      label{
+        color: var(--color--main-base);
+      }
+    }
+  } 
+
+  &__icon{
+    height: $icon-size;
+    width: $icon-size;
+    color: inherit;
+  }
+
+  &__label{
+    display: grid;
+    place-content: center;
+    transition: color variables.$a-time--short ease;
+    cursor: pointer;
+  }
+
+  &__input{
+    font-size: variables.$text--md;
+  }
+
+  &__btn{
+    @extend %a-btn_new-lines;
+    font-weight: variables.$text-weight--medium;
+    box-shadow: variables.$shadow--small;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color--text-base);
+    color: var(--color--text-white);
+    transition: color variables.$a-time--short ease;
+
+    span{
+      @include mixins.center-flex;
+      gap: variables.$space-sm;
+      padding: variables.$padding-8x12;
+    }
+
+    &:hover{
+      color: var(--color--main-base);
+    }
+  }
+}

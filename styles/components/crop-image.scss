@@ -1,0 +1,9 @@
+$preview-height: 42rem;
+$preview-width: 80rem;
+
+.crop-image{
+  &__preview{
+    max-height: $preview-height;
+    max-width: $preview-width;
+  }
+}

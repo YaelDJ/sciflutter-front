@@ -1,0 +1,33 @@
+@use '../abstract/animations';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-settings-button{
+  @extend %button-reset;
+  @extend %link-text-hover;
+  @extend %a-btn_new-lines;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color--text-white);
+  background-color: var(--color--main-base);
+  transition: background-color 0.3s ease-in, color 0.2s ease;
+  padding: 0;
+
+  span{
+    padding: variables.$padding-8x12;
+  }
+
+  &:hover{
+    background-color: transparent;
+  }
+
+  &_full{
+    width: 100%;
+  }
+
+  &.loading{
+    background-color: var(--color--text-base);
+    pointer-events: none;
+  }
+}

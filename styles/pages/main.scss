@@ -1,0 +1,12 @@
+@use '../abstract/variables';
+
+.l-container_main{
+  width: 80%;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: 100%;
+  row-gap: variables.$space-5xl;
+  margin-inline: auto;
+  padding: variables.$space-5xl 0 variables.$space-6xl;
+}

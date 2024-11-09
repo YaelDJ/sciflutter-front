@@ -1,0 +1,30 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+.c-filter-sort{
+  @include mixins.display-flex(row, auto, center, space-between);
+  width: 100%;
+
+  &__item{
+    display: grid;
+    row-gap: variables.$space-base;
+    text-align: center;
+    font-weight: variables.$text-weight--medium;
+
+    &-title, &-options{
+      font-weight: inherit;
+    }
+
+    &-options{
+      @extend %button-reset;
+      text-align: inherit;
+      padding: variables.$space-sm variables.$space-md;
+      border: variables.$border-thin;
+    }
+  }
+
+  &__filters{
+    @include mixins.display-flex(row, 1.6rem, center, initial);
+  }
+}

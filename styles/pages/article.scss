@@ -1,0 +1,14 @@
+@use '../abstract/variables';
+
+.l-article{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  row-gap: variables.$space-4xl;
+  padding: variables.$space-lg 0 variables.$space-3xl;
+
+  &__body{
+    width: 80%;
+  }
+}

@@ -1,0 +1,31 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$icon-size: 2.4rem;
+
+.c-modal-header{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  justify-items: center;
+  padding: variables.$space-base 0;
+  border-bottom: variables.$border-thin;
+
+  &__title{
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  
+  &__btn{
+    @extend %button-reset;
+    @extend %link-text-hover;
+    @include mixins.center-grid;
+  }
+
+    &__icon{
+    width: $icon-size;
+    height: $icon-size;
+  }
+}

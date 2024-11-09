@@ -1,0 +1,97 @@
+@use '../abstract/animations';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-form{
+  display: grid;
+  row-gap: variables.$space-2xl;
+  justify-items: center;
+  padding: variables.$space-xl variables.$space-2xl;
+  box-shadow: variables.$shadow--medium;
+  width: 45%;
+
+  &-header{
+    max-width: 40rem;
+    text-align: center;
+
+    &__heading{
+      font-size: variables.$text--xl;
+      color: var(--color--main-base);
+      font-weight: 400;
+      margin-bottom: variables.$space-base;
+    }
+  }
+
+  &-formulary{
+    width: 100%;
+    display: grid;
+    row-gap: variables.$space-xl;
+    justify-items: center;
+
+    &__group{
+      width: 100%;
+      font-size: variables.$text--md;
+
+      label{
+        display: inline-block;
+        margin-bottom: variables.$space-sm;
+        cursor: pointer;
+      }
+
+      input{
+        @extend %button-reset;
+        display: block;
+        width: 100%;
+        margin-bottom: variables.$space-lg;
+        border-bottom: variables.$border-normal;
+        padding: variables.$space-sm;
+        transition: border-bottom-color variables.$a-time--normal ease;
+
+        &:focus{
+          border-bottom-color: var(--color--main-base);
+        }
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+
+        &::placeholder{
+          color: var(--color--text-light);
+        }
+      }
+    }
+
+    &__button{
+      @extend %button-reset;
+      @extend %a-btn_borders;
+      padding: variables.$space-base variables.$space-lg;
+      color: var(--color--text-base);
+      font-size: variables.$text--base;
+      font-weight: 500;
+    }
+  }
+}
+
+.is-pending{
+  @extend %button-disable;
+  background-color: var(--color--text-light);
+  color: var(--color--text-white);
+  
+  &:hover{
+    background-color: var(--color--text-light);
+    box-shadow: none;
+    color: var(--color--text-white);
+
+    &::before{
+      opacity: 1;
+    }
+
+    &::after{
+      opacity: 0;
+    }
+  }
+
+  &:active{
+    transform: translateY(3px)
+  }
+}

@@ -1,0 +1,39 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@forward './filter-sort';
+
+.c-requests-options{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  column-gap: variables.$space-xl;
+
+  &__search-bar{
+    input{
+      width: 100%;
+      @extend %button-reset;
+      padding: variables.$space-base variables.$space-md;
+      border: variables.$border-thin;
+      transition: border-color variables.$a-time--normal ease;
+
+      &:focus{
+        border-color: var(--color--main-base);
+      }
+    }
+  }
+
+  &__filter-sort{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__filter{
+    display: flex;
+    gap: variables.$space-lg;
+  }
+
+  &__option{
+    display: flex;
+    flex-direction: column;
+  }
+}

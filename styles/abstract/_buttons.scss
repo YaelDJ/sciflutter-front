@@ -1,0 +1,227 @@
+.btn{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+
+  &--main-search{
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    color: $color--main-0;
+    position: relative;
+    padding: 0.4rem;
+    transition: transform 0.2s ease-in;
+    display: flex;
+    align-items: center;
+
+    &__icon{
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
+    &::after{
+      content: "";
+      width: 100%;
+      position: absolute;
+      height: 2px;
+      background-color: $color--main-0;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%) scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease-in;
+    }
+
+    &:hover{
+      &::after{
+        transform: translateY(100%) scaleX(1);
+      }
+    }
+
+    &:active{
+      color: $color--main-10;
+
+      &::after{
+        background-color: $color--main-10;
+      }
+    }
+  }
+
+  &-link{    
+    &,
+    &:link,
+    &:visited{
+      color: $color--main-0;
+      font-size: 1.6rem;
+      position: relative;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      padding: 0.8rem;
+
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in;
+      }
+    }
+  }
+
+  &-link--outline{
+    &,
+    &:visited,
+    &:link{
+      &::after{
+        content: "";
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $color--main-0;
+        transform-origin: left;
+      }
+    }
+
+    &:hover{
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+
+    &:active{
+      color: $color--main-10;
+      transform: translateY(2px);
+
+      &::after{
+        background-color: $color--main-10;
+      }
+    }
+  }
+
+  &-link--main{
+    &,
+    &:link,
+    &:visited{
+      z-index: 2;
+      transition: color 0.2s ease-in;
+      padding: 1.2rem 2.4rem;
+      color: $color--black-0;
+      font-size: 2rem;
+
+      &::after{
+        content: "";
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: $color--black-0;
+        z-index: -1;
+        transform-origin: left;
+      }
+    }
+
+    &:hover{
+      color: $color--util-1;
+
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+
+    &:active{
+      transform: translateY(2px);
+
+      &::after{
+        background-color: $color--black-10;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &--follow{
+    color: $color--main-0;
+    z-index: 2;
+    transition: all 0.2s ease-in;
+    font-size: 2rem;
+    position: relative;
+    padding: 1.2rem 2.4rem;
+
+    &::after{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: $color--main-0;
+      z-index: -1;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover{
+      color: $color--grey-0;
+
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+
+    &:active{
+      // color: $color--grey-0;
+      transform: translateY(2px);
+
+      &::after{
+        background-color: $color--main-10;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &--unfollow{
+    color: $color--util-2;
+    z-index: 2;
+    transition: all 0.2s ease-in;
+    font-size: 2rem;
+    position: relative;
+    padding: 1.2rem 2.4rem;
+
+    &::after{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: $color--black-0;
+      z-index: -1;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover{
+      color: $color--util-2;
+
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+
+    &:active{
+      // color: $color--grey-0;
+      transform: translateY(2px);
+
+      &::after{
+        background-color: $color--black-10;
+        transform: scaleX(1);
+      }
+    }
+  }
+}

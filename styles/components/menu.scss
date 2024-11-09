@@ -1,0 +1,68 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$normal-icon-size: 2rem;
+$close-icon-size: 2.4rem;
+
+.menu-aside{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 40rem;
+  background-color: var(--color--background);
+  padding: variables.$space-2xl;
+  transition: all 0.3s;
+
+  &__header{
+    @include mixins.display-flex(row, initial, center, space-between);
+    padding: variables.$space-base 0;
+    border-bottom: variables.$border-thin;
+    margin-bottom: variables.$space-xl;
+
+    & > p{
+      text-transform: uppercase;
+    }
+  }
+  
+  menu{
+    @include mixins.display-flex(column, 2.4rem, center, flex-start);
+    list-style: none;
+  }
+
+  &__link,
+  &__btn{
+    @include mixins.display-flex(row, 1.2rem, center, flex-start);
+    transition: color variables.$a-time--short ease;
+
+    @extend %link-text-hover;
+  }
+
+  &__link{
+    @extend %link-base;
+  }
+
+  &__btn{
+    @extend %button-reset;
+  }
+
+  &__icon{
+    height: $normal-icon-size;
+    width: $normal-icon-size;
+    color: inherit;
+
+    &_close{
+      color: inherit;
+      height: $close-icon-size;
+      width: $close-icon-size;
+    }
+  }
+
+  &--open{
+    right: 0;
+    box-shadow: variables.$shadow--big;
+    transition: right variables.$a-time--normal;
+  }
+}

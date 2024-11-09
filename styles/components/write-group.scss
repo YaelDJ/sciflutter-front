@@ -1,0 +1,49 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-write-group{
+  width: 100%;
+  display: grid;
+  row-gap: variables.$space-md;
+
+  p{
+    line-height: 1.6;
+  }
+
+  label{
+    color: var(--color--main-base);
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--medium;
+  }
+
+  input, textarea{
+    @extend %button-reset;
+    border-bottom: variables.$border-normal;
+    width: 100%;
+    transition: border-color variables.$a-time--long ease;
+    resize: none;
+
+    &:focus{
+      border-color: var(--color--main-base);
+    }
+  }
+}
+
+.text {
+  padding: variables.$space-sm variables.$space-base;
+}
+
+.is-lg{
+  font-weight: variables.$text-weight--bold;
+  font-size: variables.$text--md !important;
+}
+
+.is-md{
+  font-weight: variables.$text-weight--medium;
+  font-size: variables.$text--md !important;
+}
+
+.is-base{
+  font-weight: variables.$text-weight--regular;
+  font-size: variables.$text--base !important;
+}

@@ -1,0 +1,34 @@
+@use '../abstract/mixins';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+$color-link: variables.$color--text-white;
+
+.c-footer-list{
+  @include mixins.display-flex(column, 1.6rem, initial, flex-start);
+  list-style: none;
+
+  li{
+    transition: transform variables.$a-time--normal ease-in-out;
+
+    &:hover{
+      transform: translateY(-3px);
+    }
+
+    &:active{
+      transform: translateX(0);
+    }
+  }
+
+  &__link, &__btn{
+    @extend %link-base;
+    @extend %link-text-hover;
+    color: $color-link;
+    font-weight: 300;
+    transition: color variables.$a-time--short ease;
+  }
+
+  &__btn{
+    @extend %button-reset;
+  }
+}

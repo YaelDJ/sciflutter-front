@@ -1,0 +1,10 @@
+@use '../abstract/variables';
+
+.l-more{
+  display: grid;
+  row-gap: variables.$space-2xl;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 100%;
+  width: 100%;
+}

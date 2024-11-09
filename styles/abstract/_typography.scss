@@ -1,0 +1,6 @@
+@use 'variables';
+
+.heading--secondary{
+  font-size: variables.$text--lg;
+  font-weight: variables.$text-weight--regular;
+}

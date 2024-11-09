@@ -1,0 +1,94 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+@use '../abstract/animations';
+@use '../abstract/mixins';
+
+.c-publish-window{
+  display: grid;
+  max-width: 120rem;
+  row-gap: 4.8rem;
+
+  &__heading{
+    @include mixins.center-flex;
+    color: var(--color--main-base);
+    font-size: variables.$text--md;
+  }
+
+  &__message{
+    width: 75%;
+    margin-inline: auto;
+    text-align: center;
+    display: grid;
+    row-gap: variables.$space-md;
+
+    font-size: variables.$text--md;
+
+    p{
+      text-wrap: pretty;
+    }
+  }
+
+  &__item{
+    display: grid;
+    justify-content: center;
+    row-gap: variables.$space-md;
+  }
+
+  &__upload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: variables.$space-sm;
+  }
+
+  &__img-container{
+    img{  
+      border: variables.$border-thin;
+      width: 25rem;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+  }
+
+  &__upload-file{
+    input{
+      height: 0.1px;
+      width: 0.1px;
+      position: absolute;
+      z-index: -2;
+      opacity: 0;
+    }
+
+    label{
+      display: block;
+      color: var(--color--main-base);
+      font-size: 1.8rem;
+      padding: variables.$padding-8x12;
+      cursor: pointer;
+      transition: color variables.$a-time--short ease, border-bottom-color variables.$a-time--normal ease-in;
+      border: variables.$border-thin;
+      border-color: var(--color--main-base);
+
+      &:hover{
+        color: var(--color--main-dark--1);
+        border-color: var(--color--main-dark--1);
+      }
+    }
+  }
+
+  &__delete{
+    @extend %button-reset;
+    @extend %link-base;
+    @extend %link-text-hover;
+    transition: color variables.$a-time--short ease;
+  }
+
+  &__publish{
+    @extend %button-reset;
+    @extend %a-btn_borders;
+    width: fit-content;
+    margin-inline: auto;
+    padding: variables.$padding-8x12;
+  }
+}

@@ -1,0 +1,92 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-notifications-dropdown{
+  position: absolute;
+  top: calc(100% + 3rem);
+  right: 0;
+  background-color: var(--color--background);
+  width: 40rem;
+  box-shadow: variables.$shadow--medium;
+  z-index: 7;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(45deg);
+    background-color: var(--color--text-base);
+  }
+
+  &__item, &__header, &__footer{
+    display: flex;
+  }
+
+  &__item{
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem;
+    border-bottom: variables.$border-thin;
+    border-color: var(--color--text-light);
+
+    &:last-child{
+      border: none;
+    }
+
+    p{
+      &:first-child{
+        font-weight: variables.$text-weight--medium;
+      }
+    }
+  }
+
+  &__empty-message{
+    padding: 2.4rem 0;
+    text-align: center;
+  }
+
+  &__list{
+    max-height: 50rem; 
+    overflow-y: scroll;
+    scrollbar-width: 0;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  &__header, &__footer{
+    background-color: var(--color--text-base);
+    color: var(--color--text-white);
+    padding: 1.2rem 1.6rem;
+  }
+
+  &__footer{
+    justify-content: center;
+    button{
+      @extend %button-reset;
+      @extend %link-text-hover;
+      transition: color variables.$a-time--short ease;
+    }
+  }
+}
+
+.title-error{
+  color: var(--color--error-base);
+}
+
+.title-success{
+  color: var(--color--success-base);
+}
+
+.title-warning{
+  color: var(--color--warn-base);
+}
+
+.no-read{
+  background-color: darken(variables.$color--background, 7%);
+}

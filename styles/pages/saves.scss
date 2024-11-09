@@ -1,0 +1,8 @@
+@use '../abstract/variables';
+
+.l-saves{
+  width: 120rem;
+  display: grid;
+  row-gap: variables.$space-3xl;
+  justify-items: center;
+}

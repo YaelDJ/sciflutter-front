@@ -1,0 +1,21 @@
+ @use '../abstract/mixins';
+
+$max-width-modal: 80rem;
+
+.c-modal{
+  @include mixins.center-grid;
+
+  justify-items: center;
+  grid-template-columns: 100%;
+  row-gap: 3.2rem;
+  width: 100%;
+  max-width: $max-width-modal;
+
+  background-color: var(--color--background);
+  padding: 2.4rem 3.6rem;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: all;
+  text-align: center;
+  line-height: 1.6;
+}

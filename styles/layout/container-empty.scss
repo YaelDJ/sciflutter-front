@@ -1,0 +1,5 @@
+@use '../abstract/variables';
+
+.l-container-empty{
+  padding: variables.$space-3xl 0;
+}

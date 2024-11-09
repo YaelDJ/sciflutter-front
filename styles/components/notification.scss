@@ -1,0 +1,46 @@
+@use '../abstract/variables';
+
+.notification{
+  max-width: 120rem;
+  padding: variables.$space-lg variables.$space-2xl;
+  margin-bottom: variables.$space-md;
+
+  &_success{
+    background-color: rgba(variables.$color--success-base, 0.5);
+    border: 2px solid variables.$color--success-dark;
+
+    h4{
+      color: variables.$color--success-dark;
+    }
+  }
+
+  &_error{
+    background-color: rgba(variables.$color--error-dark, 0.5);
+    border: 2px solid variables.$color--error-base;
+
+    h4{
+      color: variables.$color--error-base;
+    }
+  }
+
+  &_warning{
+    background-color: rgba(variables.$color--warn-base, 0.2);
+    border: 2px solid variables.$color--warn-base;
+
+    h4{
+      color: variables.$color--warn-dark;
+    }
+  }
+
+  h4{
+    font-weight: variables.$text-weight--bold;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    font-size: variables.$text--md;
+  }
+
+  p{
+    font-weight: variables.$text-weight--medium;
+    font-size: variables.$text--base;
+  }
+}

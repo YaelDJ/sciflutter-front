@@ -1,0 +1,28 @@
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.c-modal-group{
+  display: flex;
+  flex-direction: column;
+  gap: variables.$space-base;
+  align-items: center;
+  font-size: inherit;
+  font-family: inherit;
+
+  label{
+    color: var(--color--main-base)
+  }
+
+  input{
+    @extend %button-reset;
+    padding: variables.$padding-8x12;
+    border-bottom: variables.$border-normal;
+    transition: border-bottom variables.$a-time--normal ease-in;
+    line-height: 1.6;
+
+    &:focus{
+      outline: none;
+      border-bottom: solid 2px var(--color--main-base);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../abstract/variables';
+
+.c-editor-state{
+  padding: variables.$space-base variables.$space-lg;
+  display: flex;
+  justify-content: space-between;
+
+  &__word-count{
+    span{
+      color: var(--color--main-base);
+      font-weight: variables.$text-weight--bold;
+    }
+  }
+
+  &__save{
+    color: var(--color--main-base);
+  }
+}
+
+.is-saving{
+  color: var(--color-text-base);
+}

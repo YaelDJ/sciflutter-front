@@ -1,0 +1,7 @@
+@use '../abstract/variables';
+
+.l-requests{
+  display: grid;
+  row-gap: variables.$space-3xl;
+  justify-items: center;
+}

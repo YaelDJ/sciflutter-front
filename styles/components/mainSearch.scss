@@ -1,0 +1,16 @@
+@use '../abstract/variables';
+
+.b-main-search{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-row-gap: variables.$space-3xl;
+
+  &__logo{
+    width: 50%;
+  }
+
+  &__bar{
+    width: 100%
+  }
+}

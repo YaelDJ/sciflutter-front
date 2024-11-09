@@ -1,0 +1,19 @@
+@use '../abstract/animations';
+@use '../abstract/helpers';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.c-social-links{
+  list-style: none;
+  display: grid;
+  row-gap: variables.$space-md;
+  justify-items: start;
+  padding-left: variables.$space-md;
+
+  &__link{
+    @extend %link-base;
+    @extend %link-text-hover;
+    @include mixins.center-flex;
+    transition: color 0.2s ease;
+  }
+}

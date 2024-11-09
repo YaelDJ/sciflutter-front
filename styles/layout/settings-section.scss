@@ -1,0 +1,29 @@
+@use '../abstract/variables';
+
+.l-settings-section{
+  width: 100%;
+  display: grid;
+  row-gap: variables.$space-lg;
+  justify-items: start;
+  border-left: variables.$border-thin;
+  border-right: variables.$border-thin;
+
+  &__heading, &__main{
+    padding: variables.$space-md variables.$space-lg;
+  }
+
+  &__heading{
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--regular;
+  }
+
+  &__container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  &__main{
+    border-left: variables.$border-thin;
+  }
+}

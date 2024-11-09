@@ -1,0 +1,26 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+@use '../abstract/mixins';
+
+.c-back-button{
+  &__container{
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    padding: 0 variables.$space-lg;
+    justify-content: flex-start;
+    margin-top: 4.8rem;
+  }
+
+  &__btn{
+    @extend %button-reset;
+    @extend %link-text-hover;
+    @include mixins.center-flex;
+    transition: color variables.$a-time--short ease;
+    gap: variables.$space-sm;
+  }
+
+  &__btn, &__text{
+    text-transform: uppercase;
+  }
+}

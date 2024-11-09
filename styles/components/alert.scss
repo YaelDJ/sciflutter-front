@@ -1,0 +1,80 @@
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+$icon-size: 3.2rem;
+
+.alert{
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  width: 100%;
+  max-width: 50rem;
+  transform: translateX(-50%);
+  padding: variables.$space-md variables.$space-xl;
+  background-color: var(--color--background);
+  color: var(--color--text-base);
+  border: solid 1px;
+  z-index: 7;
+  display: flex;
+  gap: variables.$space-xl;
+  align-items: center;
+  transition: all variables.$a-time--long ease;
+
+  p{
+    font-size: variables.$text--md;
+    color: inherit;
+    text-align: center;
+    font-weight: variables.$text--md;
+  }
+
+  &__icon-box{
+    padding: 1.2rem;
+    border-radius: 5px
+  }
+  
+  &__icon{
+    @include mixins.center-grid;
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &_error{
+    border-color: variables.$color--error-dark;
+
+    .alert__icon-box{
+      background-color: rgba(variables.$color--error-dark, 0.3);
+    }
+
+    .alert__icon{
+      color: variables.$color--error-dark;
+    }
+  }
+
+  &_success{
+    border-color: variables.$color--success-dark;
+
+    .alert__icon-box{
+      background-color: rgba(variables.$color--success-base, 0.3);
+    }
+
+    .alert__icon{
+      color: variables.$color--success-dark;
+    }
+  }
+
+  &_warn{
+    border-color: variables.$color--warn-dark;
+
+    .alert__icon-box{
+      background-color: rgba(variables.$color--warn-base, 0.3);
+    }
+    
+    .alert__icon{
+      color: variables.$color--warn-dark;
+    }
+  }
+}
+
+.is-display{
+  top: 0;
+}

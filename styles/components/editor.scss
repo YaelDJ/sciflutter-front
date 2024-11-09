@@ -1,0 +1,56 @@
+@use '../abstract/variables';
+@use '../abstract/helpers';
+
+.c-editor{
+  &__upload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: variables.$space-lg;
+  }
+
+  &__img-container{
+    img{  
+      border: variables.$border-thin;
+      width: 25rem;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+  }
+
+  &__upload-file{
+    input{
+      height: 0.1px;
+      width: 0.1px;
+      position: absolute;
+      z-index: -2;
+      opacity: 0;
+    }
+
+    label{
+      display: block;
+      color: var(--color--main-base);
+      font-size: 1.8rem;
+      padding: variables.$padding-8x12;
+      cursor: pointer;
+      transition: color variables.$a-time--short ease, border-bottom-color variables.$a-time--normal ease-in;
+
+      &:hover{
+        color: var(--color--main-dark--1);
+        border-bottom-color: var(--color--main-dark--1);
+      }
+    }
+  }
+
+  &__delete{
+    @extend %button-reset;
+    @extend %link-base;
+    @extend %link-text-hover;
+    transition: color variables.$a-time--short ease;
+  }
+}
+
+.is-center{
+  text-align: center;
+}

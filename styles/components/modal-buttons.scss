@@ -1,0 +1,50 @@
+@use '../abstract/animations';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+.c-modal-buttons{
+  width: 100%;
+  padding: variables.$space-base 2.4rem;
+  @include mixins.display-flex(row, initial, center, space-between);
+
+  &__btn{
+    &_accept, &_cancel{
+      @extend %button-reset;
+      @extend %link-text-hover;
+    }
+
+    &_accept span, &_cancel{
+      padding: variables.$padding-8x12;
+    }
+
+
+    &_cancel{
+      transition: color variables.$a-time--short;
+    }
+
+    &_accept{
+      @extend %a-btn_new-lines;
+      font-weight: 500;
+      background-color: var(--color--main-base);
+      color: var(--color--text-white);
+      transition: background-color variables.$a-time--normal ease-in, color variables.$a-time--short ease;
+
+      padding: 0;
+
+      span{
+        padding: variables.$padding-8x12;
+      }
+
+      &:hover{
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/*
+  width: 100%;
+  font-size: 1.8rem;
+
+*/

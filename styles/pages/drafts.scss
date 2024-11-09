@@ -1,0 +1,29 @@
+@use '../abstract/animations';
+@use '../abstract/helpers';
+@use '../abstract/variables';
+
+.l-drafts{
+  width: 120rem;
+  display: grid;
+  row-gap: variables.$space-3xl;
+  justify-items: center;
+
+  &__new {
+    @extend %link-base;
+    @extend %a-btn_new-lines;
+    font-size: variables.$text--md;
+    font-weight: variables.$text-weight--medium;
+    background-color: var(--color--main-base);
+    color: var(--color--text-white);
+    transition: color variables.$a-time--short ease, background-color variables.$a-time--normal ease-in;
+
+    span{
+      padding: variables.$space-base variables.$space-lg;
+    }
+
+    &:hover{
+      background-color: transparent;
+      color: var(--color--main-base)
+    }
+  }
+}

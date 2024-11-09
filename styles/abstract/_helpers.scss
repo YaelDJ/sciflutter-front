@@ -1,0 +1,42 @@
+@use './variables';
+@use './mixins';
+
+%link-base{
+  &,
+  &:link,
+  &:visited{
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none
+  }
+}
+
+%link-text-hover{
+  &:hover{
+    color: var(--color--main-base);
+  }
+
+  &:active{
+    color: var(--color--main-dark--1);
+  }
+}
+
+%button-reset{
+  display: block;
+  font-size: inherit;
+  line-height: normal;
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+%button-disable{
+  cursor: not-allowed;
+  pointer-events: nones;
+}
